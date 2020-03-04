@@ -7,7 +7,9 @@
     "lint:fix": "eslint './src/**/*.{ts,tsx}'",
     "lint:style": "node ./node_modules/stylelint/bin/stylelint.js \"**/*.{css,scss}\"",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "gen:comp": "node ./node_modules/@ebsolutions/generate-react-templates --type=COMP --name=taco",
+    "gen:cont": "node ./node_modules/@ebsolutions/generate-react-templates --type=CONT --name=taco --useTypescript==true"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
