@@ -8,12 +8,11 @@
     "lint:style": "node ./node_modules/stylelint/bin/stylelint.js \"**/*.{css,scss}\"",
     "start": "react-scripts start",
     "test": "react-scripts test",
-    "gen:comp": "node ./node_modules/@ebsolutions/generate-react-templates --type=COMP --name=taco",
-    "gen:cont": "node ./node_modules/@ebsolutions/generate-react-templates --type=CONT --name=taco --useTypescript==true",
-    "gen:page": "node ./node_modules/@ebsolutions/generate-react-templates --type=PAGE --name=taco"
+    "gen:comp": "node ./node_modules/@ebsolutions/generate-react-templates --type=COMP  --useTypescript==true",
+    "gen:cont": "node ./node_modules/@ebsolutions/generate-react-templates --type=CONT --useTypescript==true"
   },
   "dependencies": {
-    "@ebsolutions/generate-react-templates": "../../packages/generate-react-templates",
+    "@ebsolutions/generate-react-templates": "^0.8.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
