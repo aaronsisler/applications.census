@@ -10,9 +10,9 @@ const authentication = (): firebase.auth.Auth => {
   const auth = firebaseApp.auth();
   auth.onAuthStateChanged(async user => {
     if (user) {
-      console.log(user);
+      console.log("Dispatch user here using user.id: ", user.uid);
     } else {
-      console.log("taco");
+      console.log("Logged Out");
     }
   });
 

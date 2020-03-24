@@ -1,35 +1,33 @@
 import React from "react";
+import { WrappedComponentProps } from "react-with-firebase-auth";
 import PropTypes from "prop-types";
 
 import "./app-container.scss";
-import { User } from "../../models/user";
 
-const AppContainer = (props: Props): JSX.Element => {
+const AppContainer = (props: WrappedComponentProps): JSX.Element => {
   const { user, signOut, signInWithGoogle } = props;
 
   return (
     <div className="app-container">
-      App Container
-      {user ? <p>Hello, {user.displayName}</p> : <p>Please sign in.</p>}
       {user ? (
-        <button onClick={signOut}>Sign out</button>
+        <div>
+          <p>Hello, {user.displayName}</p>
+          <button onClick={signOut}>Sign out</button>
+        </div>
       ) : (
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <div>
+          <p>Please sign in.</p>
+          <button onClick={signInWithGoogle}>Sign in with Google</button>
+        </div>
       )}
     </div>
   );
 };
 
-interface Props {
-  user: User;
-  signOut: () => void;
-  signInWithGoogle: () => void;
-}
-
 AppContainer.propTypes = {
   user: PropTypes.object,
-  signOut: PropTypes.func,
-  signInWithGoogle: PropTypes.func
+  signOut: PropTypes.func.isRequired,
+  signInWithGoogle: PropTypes.func.isRequired
 };
 
 export default AppContainer;
